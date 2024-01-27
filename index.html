@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello World</title>
+</head>
+<body>
+
+<form id="nameForm">
+    <label for="nameInput">Adınızı girin:</label>
+    <input type="text" id="nameInput" required>
+    <button type="submit">Gönder</button>
+</form>
+
+<div id="greeting"></div>
+
+<script>
+document.getElementById("nameForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Formun varsayılan davranışını engeller
+    
+    var name = document.getElementById("nameInput").value;
+    var greeting = "Merhaba, " + name + "!";
+    document.getElementById("greeting").textContent = greeting;
+});
+</script>
+
+</body>
+</html>
